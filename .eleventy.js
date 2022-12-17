@@ -7,9 +7,12 @@ const markdownItAnchor = require("markdown-it-anchor");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const faunaData = require('./fauna'); // Import the data retrieval function from 'fauna.js'
+
 
 module.exports = function(eleventyConfig) {
   // Copy the `img` and `css` folders to the output
+  eleventyConfig.addDataExtension('records', faunaData);
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
