@@ -4,9 +4,9 @@ eleventyNavigation:
   key: Home
   order: 1
 ---
-
+content
 {% block content %}
-  {% for record in records %}
+  {% for record in records %}record
     {{ record.mParam }}
   {% endfor %}
 {% endblock %}
